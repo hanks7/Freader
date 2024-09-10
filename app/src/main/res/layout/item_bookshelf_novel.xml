@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/item_bookshelf_novel_height"
+    android:minHeight="@dimen/item_bookshelf_novel_height"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <ImageView
+        android:id="@+id/iv_item_bookshelf_novel_cover"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:src="@drawable/default_cover"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/tv_item_bookshelf_novel_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/item_novel_source_name"
+        android:textSize="14sp"
+        android:textColor="@color/item_bookshelf_novel_name_text"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_below="@id/iv_item_bookshelf_novel_cover" />
+
+    <CheckBox
+        android:id="@+id/cb_item_bookshelf_novel_checked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bookshelf_bg">
+
+    <ImageView
+        android:id="@+id/iv_bookshelf_add"
+        android:layout_width="@dimen/bookshelf_top_bar_height"
+        android:layout_height="@dimen/bookshelf_top_bar_height"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/bookshelf_add"
+        android:padding="13.5dp"
+        android:layout_marginTop="@dimen/bookshelf_top_bar_margin_top"/>
+
+    <TextView
+        android:id="@+id/tv_bookshelf_add"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/bookshelf_top_bar_height"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_bookshelf_add"
+        android:text="@string/bookshelf_add"
+        android:textColor="@color/bookshelf_add_text"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/bookshelf_top_bar_margin_top"/>
+
+    <View
+        android:id="@+id/v_bookshelf_separator"
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_bookshelf_add"
+        android:background="@drawable/shape_bookshelf_separator"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_bookshelf_bookshelf_novels_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_bookshelf_separator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:overScrollMode="never" />
+
+    <RelativeLayout
+        android:id="@+id/rv_bookshelf_loading"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#f1f1f1"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@android:color/holo_blue_light" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:text="导入 epub 小说中..."
+            android:textSize="16sp"
+            android:textColor="#222222"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_bookshelf_multi_delete_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bookshelf_top_bar_height"
+        android:layout_marginTop="@dimen/bookshelf_top_bar_margin_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/bookshelf_multi_delete_bar_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_bookshelf_multi_delete_select_all"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/bookshelf_multi_delete_select_all"
+            android:textColor="@color/bookshelf_multi_delete_bar_text"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginStart="25dp" />
+
+        <TextView
+            android:id="@+id/tv_bookshelf_multi_delete_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/bookshelf_multi_delete_delete"
+            android:textColor="@color/bookshelf_multi_delete_bar_text"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="25dp" />
+
+        <TextView
+            android:id="@+id/tv_bookshelf_multi_delete_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/bookshelf_multi_delete_cancel"
+            android:textColor="@color/bookshelf_multi_delete_bar_text"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_toStartOf="@id/tv_bookshelf_multi_delete_delete"
+            android:layout_marginEnd="15dp"/>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

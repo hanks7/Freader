@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.feng.freader">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".app.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/freader_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".view.activity.AllNovelActivity"></activity>
+        <activity android:name=".view.activity.EpubCatalogActivity" />
+        <activity android:name=".view.activity.CatalogActivity" />
+        <activity android:name=".test.TestActivity"></activity>
+        <activity android:name=".view.activity.SearchActivity" />
+        <activity
+            android:name=".view.activity.MainActivity"
+            android:theme="@style/TransparentStatusBarTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.activity.NovelIntroActivity"
+            android:theme="@style/TransparentStatusBarTheme" />
+        <activity
+            android:name=".view.activity.ReadActivity"
+            android:theme="@style/TransparentStatusBarTheme" />
+
+        <provider
+            android:name="cn.bmob.v3.util.BmobContentProvider"
+            android:authorities="com.feng.freader.BmobContentProvider">
+        </provider>
+    </application>
+
+</manifest>
